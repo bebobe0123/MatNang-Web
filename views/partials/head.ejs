@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= meta.title || site.brand.name %></title>
+  <meta name="description" content="<%= meta.description || site.brand.shortStory %>">
+  <link rel="canonical" href="<%= siteUrl + path %>">
+  <meta name="theme-color" content="#5a3412">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="<%= site.brand.name %>">
+  <meta property="og:title" content="<%= meta.title || site.brand.name %>">
+  <meta property="og:description" content="<%= meta.description || site.brand.shortStory %>">
+  <meta property="og:url" content="<%= siteUrl + path %>">
+  <meta property="og:image" content="<%= meta.image || (siteUrl + '/images/logo-full.png') %>">
+
+  <link rel="icon" href="/images/logo-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=<%= v %>">
+
+  <script type="application/ld+json">
+  <%- JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Store',
+    name: site.brand.name,
+    slogan: site.brand.slogan,
+    url: siteUrl,
+    logo: siteUrl + '/images/logo-full.png',
+    telephone: '+84798889955',
+    email: site.contact.email,
+    address: { '@type': 'PostalAddress', streetAddress: '39 Châu Long', addressLocality: 'Phường Ba Đình', addressRegion: 'Hà Nội', addressCountry: 'VN' }
+  }) %>
+  </script>
+</head>
+<body>
+<%- include('icons') %>
+<a class="skip-link" href="#main">Bỏ qua, tới nội dung chính</a>

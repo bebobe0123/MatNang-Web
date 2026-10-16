@@ -1,0 +1,84 @@
+</main>
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <a class="brand" href="/">
+        <img class="brand__mark" src="/images/logo-mark.svg" alt="" width="48" height="48" loading="lazy">
+        <span class="brand__text">
+          <span class="brand__name"><%= site.brand.name %></span>
+          <span class="brand__tag"><%= site.brand.tagline %></span>
+        </span>
+      </a>
+      <p>Mang vị ngọt thật của nông sản Bắc Bộ đến bàn ăn của người thành phố, với nguồn gốc rõ ràng và cách đóng gói tử tế.</p>
+      <div class="footer__social">
+        <a class="icon-btn icon-btn--dark" href="<%= site.contact.zaloHref %>" target="_blank" rel="noopener" aria-label="Zalo Mật Nắng"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg></a>
+        <a class="icon-btn icon-btn--dark" href="<%= site.contact.phoneHref %>" aria-label="Gọi Mật Nắng"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></a>
+        <a class="icon-btn icon-btn--dark" href="mailto:<%= site.contact.email %>" aria-label="Email Mật Nắng"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="footer__title">Sản phẩm</h2>
+      <ul class="footer__links">
+        <% site.products.forEach((p) => { %><li><a href="/san-pham/<%= p.slug %>"><%= p.name %></a></li><% }) %>
+        <li><a href="/san-pham">Tất cả sản phẩm</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="footer__title">Mật Nắng</h2>
+      <ul class="footer__links">
+        <li><a href="/ve-mat-nang">Câu chuyện thương hiệu</a></li>
+        <li><a href="/ve-mat-nang#dieu-chung-toi-giu">Điều chúng tôi giữ</a></li>
+        <li><a href="/cong-thuc">Công thức</a></li>
+        <li><a href="/cong-thuc/bao-quan-long-nhan">Bảo quản long nhãn</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="footer__title">Liên hệ</h2>
+      <ul class="footer__links footer__contact">
+        <li><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><a href="<%= site.contact.phoneHref %>"><%= site.contact.phone %></a></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:<%= site.contact.email %>"><%= site.contact.email %></a></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg><span><%= site.contact.address %></span></li>
+      </ul>
+    </div>
+
+    <div class="footer__callback">
+      <h2 class="footer__title">Gọi lại cho tôi</h2>
+      <p>Để lại số điện thoại, Mật Nắng sẽ gọi báo giá cho anh/chị.</p>
+      <form class="callback-form js-quote-form" action="/api/bao-gia" method="post" novalidate>
+        <input type="hidden" name="name" value="Khách để lại số (chân trang)">
+        <input type="hidden" name="product" value="Chưa chọn">
+        <div class="hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+        <label class="sr-only" for="cb-phone">Số điện thoại</label>
+        <input id="cb-phone" class="input" type="tel" name="phone" inputmode="tel" autocomplete="tel" placeholder="Số điện thoại của anh/chị" required>
+        <button class="btn btn--accent btn--block" type="submit">Gọi lại cho tôi</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="container footer__bottom-inner">
+      <p>© <%= year %> <%= site.brand.name %> — <%= site.brand.slogan %></p>
+      <% if (site.contact.business.name) { %>
+        <p><%= site.contact.business.name %> · Số ĐKKD: <%= site.contact.business.registrationNo %> · Nơi cấp: <%= site.contact.business.issuedBy %></p>
+      <% } %>
+    </div>
+  </div>
+</footer>
+
+<div class="fab" aria-label="Liên hệ nhanh">
+  <a class="fab__btn fab__btn--zalo" href="<%= site.contact.zaloHref %>" target="_blank" rel="noopener" aria-label="Nhắn Zalo <%= site.contact.phone %>">
+    <span class="fab__zalo" aria-hidden="true">Zalo</span>
+  </a>
+  <a class="fab__btn fab__btn--call" href="<%= site.contact.phoneHref %>" aria-label="Gọi <%= site.contact.phone %>">
+    <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+  </a>
+</div>
+
+<script src="/js/main.js?v=<%= v %>" defer></script>
+</body>
+</html>

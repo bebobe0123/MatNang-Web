@@ -1,0 +1,46 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+<%- include('partials/page-hero', { title: post.title, eyebrow: 'Công thức', lead: post.excerpt, crumbs: [{ label: 'Công thức', href: '/cong-thuc' }, { label: post.title }] }) %>
+
+<article class="section">
+  <div class="container narrow">
+    <img class="post__cover" src="<%= post.image.replace('w=900', 'w=1400') %>" alt="" width="1400" height="788">
+    <ul class="post__meta">
+      <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> <%= post.time %></li>
+      <% if (post.serves) { %><li><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg> <%= post.serves %></li><% } %>
+    </ul>
+
+    <% if (post.ingredients.length) { %>
+      <div class="info-card">
+        <h2 class="info-card__title">Nguyên liệu</h2>
+        <ul class="checklist">
+          <% post.ingredients.forEach((i) => { %><li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><%= i %></span></li><% }) %>
+        </ul>
+      </div>
+    <% } %>
+
+    <h2 class="section__title post__h2"><%= post.ingredients.length ? 'Cách làm' : 'Mẹo bảo quản' %></h2>
+    <ol class="steps">
+      <% post.steps.forEach((s) => { %><li><%= s %></li><% }) %>
+    </ol>
+
+    <div class="cta-box">
+      <div>
+        <h2>Cần nguyên liệu cho món này?</h2>
+        <p>Nhắn Zalo <%= site.contact.phone %> để nhận báo giá theo quy cách.</p>
+      </div>
+      <a class="btn btn--primary btn--lg" href="<%= site.contact.zaloHref %>" target="_blank" rel="noopener">Nhắn Zalo</a>
+    </div>
+  </div>
+</article>
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="section__head"><h2 class="section__title">Công thức khác</h2></div>
+    <div class="post-grid">
+      <% site.posts.filter((p) => p.slug !== post.slug).slice(0, 3).forEach((p) => { %><%- include('partials/post-card', { post: p }) %><% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

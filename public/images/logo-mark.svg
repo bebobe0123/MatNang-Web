@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Mật Nắng">
+  <circle cx="32" cy="37" r="24" fill="#fbe3b8"/>
+  <g stroke="#f0a818" stroke-width="3.2" stroke-linecap="round">
+    <path d="M14 15l-4-3M50 15l4-3M20 9l-2-4M44 9l2-4M8 23l-5-2M56 23l5-2"/>
+  </g>
+  <path d="M32 6C25 16 17 26 17 39a15 15 0 0 0 30 0C47 26 39 16 32 6Z" fill="#f0a818"/>
+  <path d="M26.5 20c-2.4 3.6-4 7-4.6 10.5" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <path d="M26 41a6 6 0 0 1 12 0Z" fill="#fff"/>
+  <g stroke="#fff" stroke-width="2" stroke-linecap="round">
+    <path d="M32 30.5v2.5M25.8 33l1.6 1.6M38.2 33l-1.6 1.6M23 41.5h18M25 45.5h14M27.5 49.5h9"/>
+  </g>
+</svg>

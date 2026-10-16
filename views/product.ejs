@@ -1,0 +1,94 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<section class="section section--first">
+  <div class="container">
+    <nav class="crumbs" aria-label="Đường dẫn">
+      <a href="/">Trang chủ</a><span aria-hidden="true">/</span>
+      <a href="/san-pham">Sản phẩm</a><span aria-hidden="true">/</span>
+      <span aria-current="page"><%= product.name %></span>
+    </nav>
+
+    <div class="pdp">
+      <div class="pdp__gallery">
+        <img class="pdp__main js-gallery-main" src="<%= product.gallery[0].replace('w=900', 'w=1200') %>" alt="Ảnh minh họa <%= product.name %>" width="1200" height="1200">
+        <div class="pdp__thumbs">
+          <% product.gallery.forEach((g, i) => { %>
+            <button class="pdp__thumb js-gallery-thumb<%= i === 0 ? ' is-active' : '' %>" type="button" data-src="<%= g.replace('w=900', 'w=1200') %>" aria-label="Xem ảnh <%= i + 1 %>"<%- i === 0 ? ' aria-pressed="true"' : ' aria-pressed="false"' %>>
+              <img src="<%= g.replace('w=900', 'w=200') %>" alt="" width="100" height="100" loading="lazy">
+            </button>
+          <% }) %>
+        </div>
+        <p class="note">Ảnh minh họa. Ảnh sản phẩm thật đang được cập nhật.</p>
+      </div>
+
+      <div class="pdp__info">
+        <span class="badge"><%= product.badge %></span>
+        <h1 class="pdp__title"><%= product.name %></h1>
+        <% if (product.subtitle) { %><p class="pcard__sub"><%= product.subtitle %></p><% } %>
+        <p class="pdp__desc"><%= product.description %></p>
+
+        <h2 class="pdp__label">Quy cách</h2>
+        <ul class="chips chips--lg">
+          <% product.sizes.forEach((s) => { %><li class="chip"><%= s %></li><% }) %>
+        </ul>
+
+        <div class="pdp__price">
+          <span>Giá</span>
+          <strong>Liên hệ <a href="<%= site.contact.phoneHref %>"><%= site.contact.phone %></a></strong>
+        </div>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg" href="<%= site.contact.zaloHref %>" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg> Nhắn Zalo để nhận báo giá
+          </a>
+          <a class="btn btn--outline btn--lg" href="<%= site.contact.phoneHref %>">
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg> Gọi <%= site.contact.phone %>
+          </a>
+        </div>
+
+        <% if (product.warning) { %>
+          <p class="alert"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg> <%= product.warning %></p>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--sand">
+  <div class="container info-grid">
+    <div class="info-card">
+      <h2 class="info-card__title"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-sparkle"/></svg> Cách dùng</h2>
+      <ul class="checklist">
+        <% product.uses.forEach((u) => { %><li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><%= u %></span></li><% }) %>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h2 class="info-card__title"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-package"/></svg> Bảo quản</h2>
+      <ul class="checklist">
+        <% product.storage.forEach((u) => { %><li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><%= u %></span></li><% }) %>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="bao-gia">
+  <div class="container narrow">
+    <div class="section__head section__head--center">
+      <h2 class="section__title">Nhận báo giá <%= product.name.toLowerCase() %></h2>
+      <span class="section__rule" aria-hidden="true"></span>
+    </div>
+    <%- include('partials/quote-form', { selected: product.name }) %>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="section__head"><h2 class="section__title">Sản phẩm khác</h2></div>
+    <div class="pgrid pgrid--2">
+      <% site.products.filter((p) => p.slug !== product.slug).forEach((p) => { %><%- include('partials/product-card', { p }) %><% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

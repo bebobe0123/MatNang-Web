@@ -1,0 +1,10 @@
+<article class="post-card">
+  <a class="post-card__media" href="/cong-thuc/<%= post.slug %>" tabindex="-1" aria-hidden="true">
+    <img src="<%= post.image %>" alt="" width="900" height="600" loading="lazy">
+  </a>
+  <div class="post-card__body">
+    <p class="post-card__meta"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-clock"/></svg> <%= post.time %></p>
+    <h3 class="post-card__title"><a href="/cong-thuc/<%= post.slug %>"><%= post.title %></a></h3>
+    <p><%= post.excerpt %></p>
+  </div>
+</article>

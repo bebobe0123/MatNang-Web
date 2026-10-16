@@ -1,0 +1,41 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+<%- include('partials/page-hero', { title: 'Liên hệ & đặt hàng', eyebrow: 'Mật Nắng', lead: 'Gọi hoặc nhắn Zalo ' + site.contact.phone + ' để nhận báo giá theo quy cách và số lượng.', crumbs: [{ label: 'Liên hệ' }] }) %>
+
+<section class="section">
+  <div class="container contact">
+    <div class="contact__info">
+      <ul class="contact__list">
+        <li>
+          <span class="value__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-phone"/></svg></span>
+          <div><strong>Điện thoại / Zalo</strong><a href="<%= site.contact.phoneHref %>"><%= site.contact.phone %></a></div>
+        </li>
+        <li>
+          <span class="value__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-mail"/></svg></span>
+          <div><strong>Email</strong><a href="mailto:<%= site.contact.email %>"><%= site.contact.email %></a></div>
+        </li>
+        <li>
+          <span class="value__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-store"/></svg></span>
+          <div><strong>Địa chỉ</strong><span><%= site.contact.address %></span></div>
+        </li>
+      </ul>
+      <div class="hero__actions">
+        <a class="btn btn--primary btn--lg" href="<%= site.contact.zaloHref %>" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg> Nhắn Zalo</a>
+        <a class="btn btn--outline btn--lg" href="<%= site.contact.phoneHref %>"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg> Gọi ngay</a>
+      </div>
+      <div class="map">
+        <iframe title="Bản đồ đến Mật Nắng — <%= site.contact.address %>" src="https://www.google.com/maps?q=<%= encodeURIComponent(site.contact.mapQuery) %>&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+    <div class="contact__form" id="bao-gia">
+      <h2 class="section__title">Yêu cầu báo giá</h2>
+      <p>Điền vài thông tin, Mật Nắng sẽ gọi lại báo giá cho anh/chị.</p>
+      <% if (sent) { %><p class="form-status is-ok" role="status">Cảm ơn anh/chị! Mật Nắng sẽ gọi lại báo giá trong thời gian sớm nhất.</p><% } %>
+      <% if (error) { %><p class="form-status is-error" role="alert"><%= error %></p><% } %>
+      <%- include('partials/quote-form', { selected }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

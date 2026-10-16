@@ -1,0 +1,14 @@
+<section class="page-hero">
+  <div class="container">
+    <nav class="crumbs" aria-label="Đường dẫn">
+      <a href="/">Trang chủ</a>
+      <% (crumbs || []).forEach((c) => { %>
+        <span aria-hidden="true">/</span>
+        <% if (c.href) { %><a href="<%= c.href %>"><%= c.label %></a><% } else { %><span aria-current="page"><%= c.label %></span><% } %>
+      <% }) %>
+    </nav>
+    <% if (typeof eyebrow !== 'undefined' && eyebrow) { %><p class="eyebrow"><%= eyebrow %></p><% } %>
+    <h1 class="page-hero__title"><%= title %></h1>
+    <% if (typeof lead !== 'undefined' && lead) { %><p class="page-hero__lead"><%= lead %></p><% } %>
+  </div>
+</section>

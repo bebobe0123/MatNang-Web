@@ -1,0 +1,145 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<section class="hero">
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <p class="eyebrow">Nắng kết thành mật</p>
+      <h1 class="hero__title">Giữ vị ngọt của<br>mùa hè Bắc Bộ.</h1>
+      <p class="hero__lead"><%= site.brand.shortStory %></p>
+      <div class="hero__actions">
+        <a class="btn btn--primary btn--lg" href="/san-pham">Xem sản phẩm</a>
+        <a class="btn btn--outline btn--lg" href="<%= site.contact.zaloHref %>" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg> Nhắn Zalo báo giá
+        </a>
+      </div>
+    </div>
+    <div class="hero__media">
+      <img src="<%= site.images.hero %>" alt="Nhãn chín vàng đổ ra từ bát gỗ" width="1400" height="1050" fetchpriority="high">
+      <div class="hero__note">
+        <img src="/images/logo-mark.svg" alt="" width="40" height="40">
+        <div>
+          <strong>Đóng gói tại Hà Nội</strong>
+          <span>Từ nhãn những vùng trồng uy tín Bắc Bộ</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust" aria-label="Điều Mật Nắng giữ">
+  <div class="container trust__grid">
+    <% site.values.forEach((v) => { %>
+      <div class="trust__item">
+        <svg class="icon icon--lg" aria-hidden="true"><use href="#i-<%= v.icon %>"/></svg>
+        <div><strong><%= v.title %></strong><span><%= v.text %></span></div>
+      </div>
+    <% }) %>
+    <div class="trust__item">
+      <svg class="icon icon--lg" aria-hidden="true"><use href="#i-package"/></svg>
+      <div><strong>Đủ quy cách</strong><span>100 g · 200 g · 500 g · 1 kg</span></div>
+    </div>
+    <div class="trust__item">
+      <svg class="icon icon--lg" aria-hidden="true"><use href="#i-chat"/></svg>
+      <div><strong>Báo giá qua Zalo</strong><span><%= site.contact.phone %></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section__head section__head--center">
+      <h2 class="section__title">Dùng Mật Nắng thế nào?</h2>
+      <span class="section__rule" aria-hidden="true"></span>
+    </div>
+    <ul class="ways">
+      <% site.ways.forEach((w) => { %>
+        <li>
+          <a class="way" href="<%= w.href %>">
+            <span class="way__img"><img src="<%= w.image.replace('w=900', 'w=320') %>" alt="" width="160" height="160" loading="lazy"></span>
+            <span class="way__title"><%= w.title %></span>
+            <span class="way__more">Xem thêm</span>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="section__head">
+      <h2 class="section__title">Sản phẩm của Mật Nắng</h2>
+      <a class="link-arrow" href="/san-pham">Xem tất cả <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+    </div>
+    <div class="pgrid">
+      <% site.products.forEach((p) => { %><%- include('partials/product-card', { p }) %><% }) %>
+      <article class="pcard pcard--soon">
+        <div class="pcard__media">
+          <span class="badge badge--muted">Sắp ra mắt</span>
+          <img src="<%= site.images.teaLeaves %>" alt="" width="600" height="600" loading="lazy">
+        </div>
+        <div class="pcard__body">
+          <h3 class="pcard__title">Trà thảo mộc Bắc Bộ</h3>
+          <p class="pcard__summary">Những món quà của nắng, giữ được lâu, dùng được quanh năm — đang được Mật Nắng chọn lựa.</p>
+          <div class="pcard__foot">
+            <span class="price">Sắp có</span>
+            <a class="btn btn--outline btn--sm" href="<%= site.contact.zaloHref %>" target="_blank" rel="noopener">Báo tôi khi có</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container promos">
+    <a class="promo promo--sand" href="/lien-he?sp=<%= encodeURIComponent('Quà biếu / nhiều sản phẩm') %>#bao-gia">
+      <div class="promo__copy">
+        <p class="eyebrow">Quà của nắng</p>
+        <h2 class="promo__title">Quà biếu<br>mùa nào cũng hợp</h2>
+        <p>Long nhãn, long nhãn ôm sen và mật nhãn — chọn quy cách theo số người nhận.</p>
+        <span class="btn btn--primary btn--sm">Nhận báo giá quà</span>
+      </div>
+      <img class="promo__img" src="<%= site.images.giftBoxes %>" alt="" width="600" height="600" loading="lazy">
+    </a>
+    <a class="promo promo--honey" href="/lien-he#bao-gia">
+      <div class="promo__copy">
+        <p class="eyebrow">Mua số lượng</p>
+        <h2 class="promo__title">Báo giá theo<br>quy cách &amp; số lượng</h2>
+        <p>Quán chè, quán trà, cửa hàng hay đặt cho công ty — nhắn chúng tôi để nhận giá phù hợp.</p>
+        <span class="btn btn--primary btn--sm">Gửi yêu cầu</span>
+      </div>
+      <img class="promo__img" src="<%= site.images.driedFruits %>" alt="" width="600" height="600" loading="lazy">
+    </a>
+  </div>
+</section>
+
+<section class="section story">
+  <div class="container story__inner">
+    <div class="story__media">
+      <img src="<%= site.images.longanTree %>" alt="Chùm nhãn chín trên cành" width="1200" height="900" loading="lazy">
+    </div>
+    <div class="story__copy">
+      <p class="eyebrow">Câu chuyện thương hiệu</p>
+      <h2 class="section__title">Nắng kết thành mật</h2>
+      <p>Đồng bằng Bắc Bộ vào hè có một thứ nắng rất riêng: gắt, dài, và cháy vàng trên những vườn nhãn trĩu quả. Người ta bóc vỏ, tách hạt, đem sấy từng khay cùi nhãn cho đến khi vàng óng, se lại và đậm một vị ngọt như mật.</p>
+      <blockquote class="story__quote">Người ta gọi đó là long nhãn. Chúng tôi gọi đó là nắng đã kết thành mật.</blockquote>
+      <a class="btn btn--outline" href="/ve-mat-nang">Đọc câu chuyện Mật Nắng</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section__head">
+      <h2 class="section__title">Công thức từ bếp Mật Nắng</h2>
+      <a class="link-arrow" href="/cong-thuc">Tất cả công thức <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+    </div>
+    <div class="post-grid">
+      <% site.posts.slice(0, 3).forEach((post) => { %><%- include('partials/post-card', { post }) %><% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

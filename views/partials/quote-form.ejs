@@ -1,0 +1,44 @@
+<%
+  const preset = typeof selected !== 'undefined' ? selected : '';
+  const allSizes = ['100 g', '200 g', '500 g', '1 kg', 'Khác / chưa rõ'];
+%>
+<form class="quote-form js-quote-form" action="/api/bao-gia" method="post" novalidate>
+  <div class="hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+
+  <div class="field">
+    <label for="qf-name">Họ tên <span aria-hidden="true">*</span></label>
+    <input class="input" id="qf-name" name="name" autocomplete="name" required>
+  </div>
+  <div class="field">
+    <label for="qf-phone">Số điện thoại / Zalo <span aria-hidden="true">*</span></label>
+    <input class="input" id="qf-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="qf-phone-help">
+    <small id="qf-phone-help" class="help">Chúng tôi chỉ dùng số này để báo giá.</small>
+  </div>
+  <div class="field">
+    <label for="qf-product">Sản phẩm</label>
+    <select class="input" id="qf-product" name="product">
+      <% site.products.forEach((p) => { %>
+        <option<%= preset === p.name ? ' selected' : '' %>><%= p.name %></option>
+      <% }) %>
+      <option<%= preset === 'Quà biếu / nhiều sản phẩm' ? ' selected' : '' %>>Quà biếu / nhiều sản phẩm</option>
+    </select>
+  </div>
+  <div class="field">
+    <label for="qf-size">Quy cách</label>
+    <select class="input" id="qf-size" name="size">
+      <% allSizes.forEach((s) => { %><option><%= s %></option><% }) %>
+    </select>
+  </div>
+  <div class="field">
+    <label for="qf-qty">Số lượng</label>
+    <input class="input" id="qf-qty" name="quantity" placeholder="Ví dụ: 5 túi, 2 kg…">
+  </div>
+  <div class="field field--full">
+    <label for="qf-note">Ghi chú</label>
+    <textarea class="input" id="qf-note" name="note" rows="3" placeholder="Thời gian cần hàng, địa chỉ giao, làm quà biếu…"></textarea>
+  </div>
+  <div class="field field--full">
+    <button class="btn btn--primary btn--lg" type="submit">Gửi yêu cầu báo giá</button>
+    <p class="form-status" role="status" aria-live="polite"></p>
+  </div>
+</form>

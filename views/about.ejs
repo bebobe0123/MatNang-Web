@@ -1,0 +1,56 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+<%- include('partials/page-hero', { title: 'Nắng kết thành mật', eyebrow: 'Về Mật Nắng', lead: site.brand.slogan, crumbs: [{ label: 'Về Mật Nắng' }] }) %>
+
+<section class="section">
+  <div class="container split">
+    <div class="prose">
+      <p class="dropcap">Đồng bằng Bắc Bộ vào hè có một thứ nắng rất riêng: gắt, dài, và cháy vàng trên những vườn nhãn trĩu quả. Tháng bảy, tháng tám, cả vùng thơm mùi nhãn chín. Người ta bóc vỏ, tách hạt, đem sấy từng khay cùi nhãn cho đến khi vàng óng, se lại và đậm một vị ngọt như mật.</p>
+      <blockquote class="story__quote">Người ta gọi đó là long nhãn. Chúng tôi gọi đó là nắng đã kết thành mật.</blockquote>
+    </div>
+    <img class="split__img" src="<%= site.images.longanTree %>" alt="Chùm nhãn chín trên cành" width="1200" height="900" loading="lazy">
+  </div>
+</section>
+
+<section class="section section--sand">
+  <div class="container split split--reverse">
+    <img class="split__img" src="<%= site.images.longanCluster %>" alt="Chùm nhãn trĩu quả" width="900" height="900" loading="lazy">
+    <div class="prose">
+      <h2 class="section__title">Vì sao là Mật Nắng</h2>
+      <p>Mật Nắng ra đời từ một mong muốn giản dị: mang vị ngọt thật của nông sản Bắc Bộ đến bàn ăn của người thành phố, với nguồn gốc rõ ràng và cách đóng gói tử tế.</p>
+      <p>Chúng tôi không tự nhận mình là người trồng nhãn. Việc của Mật Nắng là đi tìm, đi chọn và đứng ra chịu trách nhiệm: làm việc trực tiếp với những hợp tác xã có vườn, có lò sấy, có giấy tờ minh bạch; nếm thử từng lô; rồi đóng gói lại tại Hà Nội theo quy cách vừa dùng.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="dieu-chung-toi-giu">
+  <div class="container">
+    <div class="section__head section__head--center">
+      <h2 class="section__title">Điều chúng tôi giữ</h2>
+      <span class="section__rule" aria-hidden="true"></span>
+    </div>
+    <div class="value-grid">
+      <% site.values.forEach((v) => { %>
+        <div class="value">
+          <span class="value__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-<%= v.icon %>"/></svg></span>
+          <h3><%= v.title %></h3>
+          <p><%= v.text %></p>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section section--sand">
+  <div class="container narrow center">
+    <h2 class="section__title">Hôm nay và ngày mai</h2>
+    <p>Mật Nắng bắt đầu từ quả nhãn với long nhãn sấy khô, long nhãn ôm sen và mật nhãn. Trên cùng một tinh thần đó, chúng tôi sẽ dần mang đến những loại trà thảo mộc và nông sản sấy khác của Bắc Bộ — những món quà của nắng, giữ được lâu, dùng được quanh năm.</p>
+    <p class="signoff">Mật Nắng — giữ vị ngọt của mùa hè Bắc Bộ.</p>
+    <div class="hero__actions hero__actions--center">
+      <a class="btn btn--primary btn--lg" href="/san-pham">Xem sản phẩm</a>
+      <a class="btn btn--outline btn--lg" href="/lien-he">Liên hệ</a>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

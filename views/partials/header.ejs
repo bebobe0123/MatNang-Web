@@ -1,0 +1,64 @@
+<%
+  const isActive = (href) => href === '/' ? path === '/' : path.startsWith(href);
+%>
+<div class="topbar">
+  <div class="container topbar__inner">
+    <a class="topbar__item" href="<%= site.contact.phoneHref %>">
+      <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+      <span>Hotline / Zalo: <strong><%= site.contact.phone %></strong></span>
+    </a>
+    <a class="topbar__item topbar__item--center" href="<%= site.contact.zaloHref %>" target="_blank" rel="noopener">
+      <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
+      <span>Nhắn Zalo để nhận báo giá theo quy cách</span>
+    </a>
+    <span class="topbar__item topbar__item--end">
+      <svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>
+      <span><%= site.contact.address %></span>
+    </span>
+  </div>
+</div>
+
+<header class="header" id="top">
+  <div class="container header__inner">
+    <a class="brand" href="/" aria-label="<%= site.brand.name %> — Trang chủ">
+      <img class="brand__mark" src="/images/logo-mark.svg" alt="" width="48" height="48">
+      <span class="brand__text">
+        <span class="brand__name"><%= site.brand.name %></span>
+        <span class="brand__tag"><%= site.brand.category %></span>
+      </span>
+    </a>
+
+    <nav class="nav" id="site-nav" aria-label="Điều hướng chính">
+      <ul class="nav__list">
+        <% site.nav.forEach((item) => { %>
+          <li class="nav__item<%= item.children ? ' has-sub' : '' %>">
+            <a class="nav__link<%= isActive(item.href) ? ' is-active' : '' %>" href="<%= item.href %>"<%- isActive(item.href) ? ' aria-current="page"' : '' %>>
+              <%= item.label %>
+              <% if (item.children) { %><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron-down"/></svg><% } %>
+            </a>
+            <% if (item.children) { %>
+              <ul class="nav__sub">
+                <% item.children.forEach((c) => { %>
+                  <li><a href="<%= c.href %>"><%= c.label %></a></li>
+                <% }) %>
+              </ul>
+            <% } %>
+          </li>
+        <% }) %>
+      </ul>
+      <a class="btn btn--primary nav__cta-mobile" href="<%= site.contact.zaloHref %>" target="_blank" rel="noopener">Nhắn Zalo báo giá</a>
+    </nav>
+
+    <div class="header__actions">
+      <a class="icon-btn" href="<%= site.contact.phoneHref %>" aria-label="Gọi <%= site.contact.phone %>">
+        <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+      </a>
+      <a class="btn btn--primary btn--sm header__cta" href="/lien-he#bao-gia">Nhận báo giá</a>
+      <button class="icon-btn nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Mở menu">
+        <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="icon icon-close" aria-hidden="true"><use href="#i-x"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<main id="main">

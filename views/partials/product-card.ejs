@@ -1,0 +1,18 @@
+<article class="pcard">
+  <a class="pcard__media" href="/san-pham/<%= p.slug %>" tabindex="-1" aria-hidden="true">
+    <span class="badge"><%= p.badge %></span>
+    <img src="<%= p.image %>" alt="" width="600" height="600" loading="lazy">
+  </a>
+  <div class="pcard__body">
+    <h3 class="pcard__title"><a href="/san-pham/<%= p.slug %>"><%= p.name %></a></h3>
+    <% if (p.subtitle) { %><p class="pcard__sub"><%= p.subtitle %></p><% } %>
+    <p class="pcard__summary"><%= p.summary %></p>
+    <ul class="chips" aria-label="Quy cách">
+      <% p.sizes.forEach((s) => { %><li class="chip"><%= s %></li><% }) %>
+    </ul>
+    <div class="pcard__foot">
+      <span class="price">Giá: <strong>Liên hệ</strong></span>
+      <a class="btn btn--primary btn--sm" href="/lien-he?sp=<%= encodeURIComponent(p.name) %>#bao-gia">Báo giá</a>
+    </div>
+  </div>
+</article>

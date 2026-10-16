@@ -1,0 +1,13 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+<%- include('partials/page-hero', { title: 'Công thức & mẹo dùng', eyebrow: 'Bếp Mật Nắng', lead: 'Từ nồi chè long nhãn hạt sen đến ấm trà long nhãn táo đỏ — những món quen, làm được ở nhà.', crumbs: [{ label: 'Công thức' }] }) %>
+
+<section class="section">
+  <div class="container">
+    <div class="post-grid post-grid--2">
+      <% site.posts.forEach((post) => { %><%- include('partials/post-card', { post }) %><% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

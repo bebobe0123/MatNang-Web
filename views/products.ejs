@@ -1,0 +1,31 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+<%- include('partials/page-hero', { title: 'Sản phẩm', eyebrow: 'Quà của nắng', lead: 'Ít sản phẩm, làm kỹ từng sản phẩm. Tất cả đều báo giá theo quy cách và số lượng — gọi hoặc nhắn Zalo ' + site.contact.phone + '.', crumbs: [{ label: 'Sản phẩm' }] }) %>
+
+<section class="section">
+  <div class="container">
+    <div class="pgrid pgrid--3">
+      <% site.products.forEach((p) => { %><%- include('partials/product-card', { p }) %><% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section section--sand">
+  <div class="container table-wrap">
+    <h2 class="section__title">Bảng quy cách</h2>
+    <table class="spec-table">
+      <thead><tr><th scope="col">Sản phẩm</th><th scope="col">Quy cách</th><th scope="col">Giá</th></tr></thead>
+      <tbody>
+        <% site.products.forEach((p) => { %>
+          <tr>
+            <th scope="row"><a href="/san-pham/<%= p.slug %>"><%= p.name %></a></th>
+            <td><%= p.sizes.join(' · ') %></td>
+            <td><a href="<%= site.contact.phoneHref %>">Liên hệ <%= site.contact.phone %></a></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
