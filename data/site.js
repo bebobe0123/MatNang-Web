@@ -129,7 +129,7 @@ const products = [
 const ways = [
   { title: 'Ăn trực tiếp', image: images.longanPlate, href: '/san-pham/long-nhan-say-kho' },
   { title: 'Nấu chè', image: images.longanPot, href: '/cong-thuc/che-long-nhan-hat-sen' },
-  { title: 'Pha trà', image: images.teaGlass, href: '/cong-thuc/tra-long-nhan-tao-do' },
+  { title: 'Pha trà', image: images.honeyCup, href: '/cong-thuc/tra-long-nhan-tao-do' },
   { title: 'Mời khách', image: images.lotusPods, href: '/san-pham/long-nhan-om-sen' },
   { title: 'Mật ong hoa nhãn', image: images.honeyDipper, href: '/san-pham/mat-ong-hoa-nhan' },
   { title: 'Quà biếu', image: images.giftBoxes, href: '/lien-he' },
