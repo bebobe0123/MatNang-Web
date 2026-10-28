@@ -30,7 +30,7 @@ const brand = {
   name: 'Mật Nắng',
   slogan: 'Giữ vị ngọt của mùa hè Bắc Bộ.',
   tagline: 'Nắng làm nên vị ngọt',
-  category: 'Nông sản sấy khô',
+  category: 'Nông sản Bắc Bộ',
   shortStory:
     'Mỗi quả nhãn chín ngọt là kết quả của cả một mùa nắng. Mật Nắng chọn nhãn từ những vùng trồng uy tín của Bắc Bộ, sấy và đóng gói cẩn thận để vị ngọt mùa hè ấy theo anh chị đến từng nồi chè, từng ấm trà trong năm.',
 };

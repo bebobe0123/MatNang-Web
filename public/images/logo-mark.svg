@@ -1,12 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Mật Nắng">
-  <circle cx="32" cy="37" r="24" fill="#fbe3b8"/>
-  <g stroke="#f0a818" stroke-width="3.2" stroke-linecap="round">
-    <path d="M14 15l-4-3M50 15l4-3M20 9l-2-4M44 9l2-4M8 23l-5-2M56 23l5-2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 110" role="img" aria-label="Mật Nắng">
+  <defs><clipPath id="in"><circle cx="50" cy="64" r="37.5"/></clipPath></defs>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M46.5 3.5h7 M53.2 4.5C53 14 56.5 20.5 64 25.5C81 33.5 92 47 92 64A42 42 0 0 1 8 64C8 47 19 33.5 36 25.5C43.5 20.5 47 14 46.8 4.5" stroke="#673d1a" stroke-width="3.6"/>
+    <path d="M53.2 4.5C53 14 56.5 20.5 64 25.5C81 33.5 92 47 92 64A42 42 0 0 1 8 64C8 47 19 33.5 36 25.5C43.5 20.5 47 14 46.8 4.5" transform="translate(50 64) scale(.9) translate(-50 -64)" stroke="#673d1a" stroke-width="1.4"/>
+    <path d="M69.5 78L84.5 78M69.13 74.2L79 72.23M68.02 70.54L82.12 64.7M66.21 67.17L75.02 61.28M63.79 64.21L75.12 52.88M60.83 61.79L67.25 52.18M57.46 59.98L64.03 44.13M53.8 58.87L56.3 46.3M50 58.5L50 40M46.2 58.87L43.7 46.3M42.54 59.98L35.97 44.13M39.17 61.79L32.75 52.18M36.21 64.21L24.88 52.88M33.79 67.17L24.98 61.28M31.98 70.54L17.88 64.7M30.87 74.2L21 72.23M30.5 78L15.5 78" stroke="#efb02b" stroke-width="1.6"/>
+    <g clip-path="url(#in)"><path d="M0 82H100M0 86.5H100M0 91H100M0 95.5H100M0 100H100" stroke="#673d1a" stroke-width="2"/></g>
   </g>
-  <path d="M32 6C25 16 17 26 17 39a15 15 0 0 0 30 0C47 26 39 16 32 6Z" fill="#f0a818"/>
-  <path d="M26.5 20c-2.4 3.6-4 7-4.6 10.5" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/>
-  <path d="M26 41a6 6 0 0 1 12 0Z" fill="#fff"/>
-  <g stroke="#fff" stroke-width="2" stroke-linecap="round">
-    <path d="M32 30.5v2.5M25.8 33l1.6 1.6M38.2 33l-1.6 1.6M23 41.5h18M25 45.5h14M27.5 49.5h9"/>
-  </g>
+  <path d="M33.5 78A16.5 16.5 0 0 1 66.5 78Z" fill="#efb02b"/>
 </svg>

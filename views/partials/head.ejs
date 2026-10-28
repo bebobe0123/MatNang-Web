@@ -14,13 +14,13 @@
   <meta property="og:title" content="<%= meta.title || site.brand.name %>">
   <meta property="og:description" content="<%= meta.description || site.brand.shortStory %>">
   <meta property="og:url" content="<%= siteUrl + path %>">
-  <meta property="og:image" content="<%= meta.image || (siteUrl + '/images/logo-full.png') %>">
+  <meta property="og:image" content="<%= meta.image || (siteUrl + '/images/logo-full.webp') %>">
 
   <link rel="icon" href="/images/logo-mark.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Lobster&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css?v=<%= v %>">
 
   <script type="application/ld+json">
@@ -30,7 +30,7 @@
     name: site.brand.name,
     slogan: site.brand.slogan,
     url: siteUrl,
-    logo: siteUrl + '/images/logo-full.png',
+    logo: siteUrl + '/images/logo-full.webp',
     telephone: '+84798889955',
     email: site.contact.email,
     address: { '@type': 'PostalAddress', streetAddress: '39 Châu Long', addressLocality: 'Phường Ba Đình', addressRegion: 'Hà Nội', addressCountry: 'VN' }
