@@ -20,6 +20,7 @@ const images = {
   honeyDipper: unsplash('1613548058193-1cd24c1bebcf'),
   honeyCup: unsplash('1536788567643-8c2368376526'),
   teaGlass: unsplash('1573784540576-21ddeff9479b'),
+  teaJujube: '/images/tra-long-nhan-tao-do.webp', // ảnh thật: long nhãn, táo đỏ, kỷ tử
   teaLeaves: unsplash('1627435601361-ec25f5b1d0e5'),
   driedFruits: unsplash('1710857397974-f0617001c39e'),
   giftBoxes: unsplash('1766425221306-4d44f4011d4a'),
@@ -156,7 +157,7 @@ const posts = [
     slug: 'tra-long-nhan-tao-do',
     title: 'Trà long nhãn táo đỏ',
     excerpt: 'Một ấm trà ấm, ngọt dịu tự nhiên cho những buổi chiều se lạnh.',
-    image: images.teaGlass,
+    image: images.teaJujube,
     time: '15 phút',
     serves: '2 người',
     ingredients: ['15–20 g long nhãn sấy khô', '4–5 quả táo đỏ khô', 'Vài lát gừng (tùy thích)', '500 ml nước sôi', 'Một thìa mật ong hoa nhãn (tùy thích)'],
